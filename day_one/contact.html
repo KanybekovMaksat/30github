@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./contact.css" />
+  </head>
+  <body>
+    <header class="container header">
+      <a href="/index.html"
+        ><img src="./images/logo.png" alt="" class="header-logo"
+      /></a>
+      <nav class="header-nav">
+        <a href="/menu.html">Menu</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <a href="" class="header-login">Login</a>
+      <button class="header-btn">Войти</button>
+    </header>
+    <section class="container contact">
+      <img src="./images/mobilescreen.png" alt="" />
+      <form class="contact-form">
+        <h2 class="title">Customer <span class="mark">Support</span></h2>
+        <input type="text" placeholder="FULL NAME" required />
+        <input type="email" placeholder="ENTER YOUR EMAIL" required />
+        <textarea placeholder="Enter The Problem Or Query" required></textarea>
+        <button type="submit">Send Now</button>
+      </form>
+    </section>
+
+    <script>
+      let url = 'https://63ba438b56043ab3c7986e49.mockapi.io/form';
+
+      let form = document.querySelector('.contact-form');
+      
+      async function sendMessage(event) {
+        let fullname = document.querySelector('input[type="text"]').value.trim();
+        let email = document.querySelector('input[type="email"]').value.trim();
+        let message = document.querySelector('textarea').value.trim();
+  
+        let data = {
+          fullName: fullname,
+          email: email,
+          message: message,
+        };
+        
+        event.preventDefault()
+        try {
+          let response = await fetch(url, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+          });
+          alert('Данные успешно отправлены');
+          form.reset();
+        } catch (error) {
+          alert('При отправке данных на сервер произошла ошибка!', error);
+        }
+      }
+
+      form.addEventListener('submit',  sendMessage);
+    </script>
+  </body>
+</html>
