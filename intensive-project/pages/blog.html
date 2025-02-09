@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header
+      class="container flex items-center pt-[57px] pb-[35px] border-b border-[#CBCBCB]"
+    >
+      <a href="../index.html">
+        <img src="../images/logo.png" alt="" />
+      </a>
+      <nav class="ml-[103px] mr-[425px] flex gap-[53px]">
+        <a href="./menu.html">Menu</a>
+        <a href="./blog.html" class="text-[#6C5FBC] font-bold">Blog</a>
+        <a href="./pricing.html">Pricing</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+      <a href="./login.html">Login</a>
+      <a
+        href="./register.html"
+        class="bg-[#6C5FBC] py-[17px] px-[26px] text-[white] rounded-[17px] ml-[17px]"
+        >Sign Up</a
+      >
+    </header>
+    <section
+      style="margin-top: 100px"
+      class="container bg-[#6C5FBC] h-[287px] rounded-[30px] flex justify-around items-center"
+    >
+      <div>
+        <h2 class="font-extrabold text-[71px] text-[white]">GET 50%</h2>
+        <div
+          class="w-[452px] h-[69px] bg-[white] rounded-[10px] p-[5px] flex justify-between items-center"
+        >
+          <input
+            class="w-[223px]"
+            type="email"
+            placeholder=" Enter Your Email Address"
+          />
+          <button
+            class="w-[136px] h-[54px] bg-[#6C5FBC] rounded-[8px] text-[white]"
+          >
+            subscribe
+          </button>
+        </div>
+      </div>
+      <img src="../images/form-food.png" alt="" />
+    </section>
+    <section class="container">
+      <h2 class="text-center">
+        Latest <span class="text-[#6C5FBC]">Articles</span>
+      </h2>
+      <div class="flex flex-wrap gap-[50px]" id="posts"></div>
+    </section>
+    <section class="container">
+        <h2 class="text-center">Часто задаваемые вопросы</h2>
+        <div class="w-96 bg-[white] shadow-lg rouned-lg">
+            <div class="border-b">
+                <button class="w-full text-left p-4" onclick="toggleAccordion(1)">Вопрос 1</button>
+                <div class="p-4 hidden" id="accordion-1">Ответ на перый вопрос</div>
+            </div>
+            <div class="border-b">
+                <button class="w-full text-left p-4" onclick="toggleAccordion(2)">Вопрос 2</button>
+                <div class="p-4 hidden" id="accordion-2">Ответ на перый вопрос</div>
+            </div>
+            <div class="border-b">
+                <button class="w-full text-left p-4" onclick="toggleAccordion(3)">Вопрос 3</button>
+                <div class="p-4 hidden" id="accordion-3">Ответ на перый вопрос</div>
+            </div>
+            <div class="border-b">
+                <button class="w-full text-left p-4" onclick="toggleAccordion(4)">Вопрос 4</button>
+                <div class="p-4 hidden" id="accordion-4">Ответ на перый вопрос</div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function toggleAccordion(id){
+            document.querySelectorAll("[id^=accordion-]").forEach(el => {
+                if(el.id === `accordion-${id}`){
+                    el.classList.toggle('hidden')
+                }else{
+                    el.classList.add('hidden')
+                }
+            })
+        }
+
+      async function getPosts() {
+        try {
+          let response = await fetch(
+            'https://63ba438b56043ab3c7986e49.mockapi.io/form'
+          );
+          let data = await response.json();
+          displayPosts(data); //вызываем функцию для отображения
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      function displayPosts(posts) {
+        let container = document.getElementById('posts');
+
+        posts.forEach((post) => {
+          let card = document.createElement('div');
+          card.className =
+            'w-[250px] h-[313px] rounded-[12px] shadow-2xl p-[20px]';
+
+          card.innerHTML = `
+        <img
+            src="${post.image}"
+            alt=""
+            class="w-[220px] max-h-[193px] rounded-[9px]"
+          />
+          <h3 class="font-semibold text-[15px]">${post.title}</h3>
+          <div class="flex">
+            <div class="flex">
+              <img src="../images/avatar.png" alt="" />
+              <div>
+                <p class="text-[8px] text-[#8D8D8D]">Written by</p>
+                <h5 class="font-medium text-[5px]">${post.author}</h5>
+              </div>
+            </div>
+            <p class="text-[11px] text-[#B7B4B4] font-medium">${post.date}</p>
+          </div>`;
+
+          container.appendChild(card);
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', getPosts);
+    </script>
+  </body>
+</html>

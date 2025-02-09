@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu</title>
     <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   </head>
   <body>
     <header class="container header">
-      <a href="/index.html"><img src="./images/logo.png" alt="" class="header-logo" /></a>
+      <a href="/index.html"
+        ><img src="./images/logo.png" alt="" class="header-logo"
+      /></a>
       <nav class="header-nav">
         <a href="/menu.html">Menu</a>
         <a href="/blog.html">Blog</a>
@@ -18,5 +21,102 @@
       <a href="" class="header-login">Login</a>
       <button class="header-btn">Войти</button>
     </header>
+    <section class="container h-[497px] shadow-xl rounded-[30px]">
+      <img src="./images/chicken-big.png" alt="" />
+      <div class="flex items-center justify-between card-inner">
+        <h3 class="text-[40px] font-semibold">The Chicken King</h3>
+        <div class="flex items-center text-[#8E97A6] gap-[5px]">
+          <p>24 min</p>
+          <p>*</p>
+          <img src="./images/star.png" alt="" />
+          <p>4.8</p>
+        </div>
+        <button>
+          <img src="./images/Bookmark.png" alt="" />
+        </button>
+      </div>
+    </section>
+    <section class="container">
+      <h2>Popular 🔥</h2>
+      <div class="products flex flex-wrap justify-between">
+        <!-- <div
+          class="product-card w-[225px] h-[390px] bg-[white] shadow-2xl flex flex-col"
+        >
+          <img src="./images/product-card.png" alt="" />
+          <div class="bg-[#F7EDD0] text-[#DAA31A] w-[80px]">Trending</div>
+          <h3 class="text-[23px] font-bold" style="padding: 0px 25px">
+            Chicken Hell
+          </h3>
+          <div class="flex gap-[5px]" style="padding: 0px 25px">
+            <p>24min</p>
+            <img src="./images/star.png" alt="" />
+            <p>4.8</p>
+          </div>
+          <div class="flex justify-between" style="padding: 20px 25px">
+            <h3>12.99$</h3>
+            <button
+              class="bg-[black] w-[43px] h-[39px] rounded-[8px] flex items-center justify-center"
+            >
+              <img src="./images/+ (1).png" alt="" />
+            </button>
+          </div>
+        </div> -->
+      </div>
+    </section>
+    <script>
+      let url = 'https://63ba438b56043ab3c7986e49.mockapi.io/foods';
+
+      async function getFoods() {
+        try {
+          const response = await fetch(url);
+          const data = await response.json();
+          displayFoods(data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      function displayFoods(foods) {
+        const container = document.querySelector('.products');
+        container.innerHTML = '';
+
+        foods.forEach((food) => {
+          const foodCard = document.createElement('div');
+          foodCard.classList.add(
+            'product-card',
+            'w-[225px]',
+            'h-[450px]',
+            'bg-[white]',
+            'shadow-2xl',
+            'flex',
+            'flex-col'
+          );
+
+          foodCard.innerHTML = `
+                    <img src="${food.image}" alt="" />
+          <div class="bg-[#F7EDD0] text-[#DAA31A] w-[80px]">${food.category}</div>
+          <h3 class="text-[23px] font-bold" style="padding: 0px 25px">
+            ${food.title}
+          </h3>
+          <div class="flex gap-[5px]" style="padding: 0px 25px">
+            <p>24min</p>
+            <img src="./images/star.png" alt="" />
+            <p>${food.rating}</p>
+          </div>
+          <div class="flex justify-between" style="padding: 20px 25px">
+            <h3>${food.price}</h3>
+            <button
+              class="bg-[black] w-[43px] h-[39px] rounded-[8px] flex items-center justify-center"
+            >
+              <img src="./images/+ (1).png" alt="" />
+            </button>
+          </div>
+          `;
+
+          container.appendChild(foodCard);
+        });
+      }
+      document.addEventListener('DOMContentLoaded', getFoods);
+    </script>
   </body>
 </html>

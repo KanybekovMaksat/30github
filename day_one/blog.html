@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog</title>
     <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   </head>
   <body>
     <header class="container header">
-      <a href="/index.html"><img src="./images/logo.png" alt="" class="header-logo" /></a>
+      <a href="/index.html"
+        ><img src="./images/logo.png" alt="" class="header-logo"
+      /></a>
       <nav class="header-nav">
         <a href="/menu.html">Menu</a>
         <a href="/blog.html">Blog</a>
@@ -18,5 +21,25 @@
       <a href="" class="header-login">Login</a>
       <button class="header-btn">Войти</button>
     </header>
+    <section class="container">
+      <h2 class="text-center text-[45px]  font-semibold">Latest articles</h2>
+      <div class="flex">
+        <div class="article-card w-[350px] h-[440px] shadow-2xl 
+        flex flex-col" style="padding: 25px;">
+          <img src="./images/article.png" alt="" />
+          <h3 class="text-[21px] font-semibold" style="margin: 25px 0px;">How To Order Food ?</h3>
+          <div class="flex justify-between items-end">
+            <div class="flex">
+              <img src="./images/avatar.png" alt="" />
+              <div>
+                <p>Written By</p>
+                <h4>Perperzon</h4>
+              </div>
+            </div>
+            <p>15 DEC, 2022</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
