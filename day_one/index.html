@@ -4,10 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eatly</title>
-    <link rel="stylesheet" href="./style.css" />
-    
+    <link rel="stylesheet" href="./style.css" /> 
   </head>
   <body>
+    <style>
+      body {
+        font-family: "Arial";
+      }
+      .notification {
+          position: fixed;
+          bottom: 20px;
+          right: -1250px;
+          background-color: #444;
+          color: #fff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          transition: right 0.5s ease-in-out;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-family: "Arial";
+      }
+      .notification.show {
+          right: 20px;
+          font-family: "Arial";
+      }
+      .notification a {
+          color: #00956f;
+          font-weight: bold;
+          font-size: 18px;
+          font-family: "Arial";
+      }
+      .close-btn {
+          background: #00956f;
+          border: none;
+          color: white;
+          font-family: "Arial";
+          padding: 5px 10px;
+          cursor: pointer;
+          border-radius: 5px;
+          border: 1px solid #00956f;
+      }
+      .close-btn:hover {
+          background: none;
+          color: #00956f;
+          border: 1px solid #00956f;
+      }
+  </style>
+<div id="notification" class="notification">
+  <span>У нас теперь новый сайт! <a href="https://muit.makalabox.com/">Перейдите на новый сайт</a></span>
+  <button class="close-btn" onclick="hideNotification()">Закрыть</button>
+</div>
+
     <header class="container header">
       <a href="/index.html"
         ><img src="./images/logo.png" alt="" class="header-logo"
@@ -131,6 +180,29 @@
         </div>
       </div>
     </footer>
+    <script>
+      function showNotification() {
+          const notification = document.getElementById("notification");
+          notification.classList.add("show");
+          setTimeout(() => {
+              notification.classList.remove("show");
+          }, 60000); // Показываем на 1 минуту
+      }
+
+      function hideNotification() {
+          const notification = document.getElementById("notification");
+          notification.classList.remove("show");
+      }
+
+      function startNotificationCycle() {
+          showNotification();
+          setInterval(() => {
+              showNotification();
+          }, 180000); // Повторяем каждые 3 минуты
+      }
+
+      window.onload = startNotificationCycle;
+  </script>
     <script src="./index.js"></script>
   </body>
 </html>
