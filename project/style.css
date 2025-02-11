@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Anton";
+}
+
+.container{
+    width: 1170px;
+    margin: 0 auto;
+}
+
+header{
+    background-image: url("./images/header-bg.png");
+    height: 900px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header-nav{
+    display: flex;
+    align-items: center;
+    padding-top: 57px;
+}
+.header-nav img{
+    margin-right: 69px;
+}
+.header-tel{
+    margin-left: 623px;
+    color: white;
+    text-decoration: none;
+}
+.header-link{
+    color: white;
+    text-decoration: none;
+}
+.header-nav nav{
+    display: flex;
+    gap: 40px;
+}
+.header-suptitle{
+    font-size: 30px;
+    letter-spacing: 10%;
+    color: white;
+    margin-top: 216px;
+}
+h1{
+    font-size: 100px;
+    color: white;
+}
+.header-btn{
+    letter-spacing: 10%;
+    font-size: 17px;
+    padding: 0 30px;
+    height: 57px;
+    background: none;
+    border: 1px solid white;
+    color: white;
+}
