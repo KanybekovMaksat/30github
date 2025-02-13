@@ -1,0 +1,40 @@
+/* Кнопка */
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: lightblue;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: blue;
+    color: white;
+}
+.btn:active {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Список */
+.list li:nth-child(2n) {
+    background-color: lightgray;
+}
+.list li:last-child {
+    font-weight: bold;
+}
+
+/* Абзац с псевдоэлементами */
+.text::before {
+    content: "👉 ";
+    color: red;
+}
+.text::after {
+    content: " ✅";
+}
+.text::first-letter {
+    font-size: 2em;
+    color: red;
+}
+.text::selection {
+    background-color: yellow;
+    color: black;
+}

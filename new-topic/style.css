@@ -1,0 +1,61 @@
+button{
+    width: 200px;
+    height: 50px;
+    background: red;
+}
+button:hover{ /*При наведении*/
+    background: teal;
+    border-radius: 10px;
+    color: white;
+}
+button:active{ /*При нажатии*/
+    background: black;
+    color: white;
+}
+ol li:first-child{
+    color: red;
+    font-weight: bold;
+}
+ol li:last-child{
+    color: teal;
+    font-style: italic;
+}
+ol li:nth-child(2){
+    color: yellow;
+    font-family: "Arial";
+}
+a:link{
+    color: green;
+}
+a:visited{
+    color:blueviolet;
+}
+h1::before{
+    content:"⚡";
+}
+h1::after{
+    content:" - это айти академия!";
+}
+h2::first-letter{
+    color: red;
+    font-size: 50px;
+}
+h2::first-line{
+    background: yellow;
+    color: green;
+    font-weight: bold;
+}
+*::selection{
+    background: teal;
+    color: yellow;
+}
+h3:hover::after{
+    content:"🔥";
+}
+h3:active::before{
+    content:"1. ";
+}
+body:hover{
+    color: orangered;
+    cursor:url('./icons8-банан-16.png'), auto;
+}

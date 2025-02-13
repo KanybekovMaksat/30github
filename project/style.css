@@ -57,4 +57,33 @@ h1{
     background: none;
     border: 1px solid white;
     color: white;
+
+    transition: 0.4s;
+}
+.header-btn:hover{
+    background: white;
+    color: black;
+}
+.about-box{
+    display: flex;
+    gap: 36px;
+}
+.about-info p{
+    font-family: 'Open Sans';
+    font-size: 16px;
+}
+.about-info h3{
+    font-size: 25px;
+    margin-bottom: 19px;
+}
+.about-title{
+    margin-top: 113px;
+    margin-bottom: 58px;
+    font-size: 50px;
+}
+.gallery-box{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 67px;
+    margin-bottom: 114px;       
 }
