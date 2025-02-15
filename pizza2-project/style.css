@@ -1,0 +1,14 @@
+* {
+  font-family: 'Unbounded';
+}
+body {
+  background: #161616;
+}
+.header-btn {
+  background: rgb(255, 93, 41);
+  background: linear-gradient(
+    175deg,
+    rgba(255, 93, 41, 1) 0%,
+    rgba(254, 156, 28, 1) 100%
+  );
+}
