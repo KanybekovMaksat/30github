@@ -12,3 +12,8 @@ body {
     rgba(254, 156, 28, 1) 100%
   );
 }
+.ingridients-btn {
+  color: rgb(255, 89, 36);
+
+  border: solid 1px rgba(255, 89, 36, 1);
+}
