@@ -1,16 +1,23 @@
+import { ToastContainer, toast } from 'react-toastify';
+import Chart from './components/Chart';
 import Header from './components/Header';
-import Main from './components/Main';
-import Staff from './components/Staff';
-import Subscribe from './components/Subscribe';
-import Works from './components/Works';
+import Drag from './components/Drag';
 
 function App() {
+  const notify = () =>
+    toast.info('Успешно!', {
+      position: 'bottom-left',
+      theme: 'colored',
+      autoClose: 1000,
+      draggable: true,
+    });
   return (
     <>
       <Header />
-      <Main />
-      <Subscribe/>
-      <Staff/>
+      <button onClick={notify}>Кликни!</button>
+      <Drag/>
+      {/* <Chart /> */}
+      <ToastContainer />
     </>
   );
 }

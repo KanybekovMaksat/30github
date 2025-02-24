@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+  </head>
+  <body>
+    <div id="preloader" class="fixed w-[100%] h-[100%] bg-[red]
+    flex justify-center items-center z-[10000]">
+        <div class="loader flex gap-[10px]">
+            <div class="dot w-[20px] h-[20px] bg-[orange] opacity-[0] 
+            rounded-full
+            "></div>
+            <div class="dot w-[20px] h-[20px] bg-[orange] opacity-[0] 
+            rounded-full
+            "></div>
+            <div class="dot w-[20px] h-[20px] bg-[orange] opacity-[0] 
+            rounded-full
+            "></div>
+        </div>
+    </div>
+    <h1 class="text-center">Изучение JS-библиотек!</h1>
+    <button
+      class="bg-[teal] rounded py-[10px] px-[15px] text-white border border-[teal] hover:bg-[white] hover:text-[teal] ml-10 transition duration-300 hover:cursor-pointer"
+      onclick="showSuccess()"
+    >
+      Успешно
+    </button>
+    <button
+      id="run-btn"
+      class="absolute top-[50%] left-[50%] h-[4rem] w-[10rem] text-[18px] bg-[teal] text-white rounded"
+    >
+      Поймай меня!
+    </button>
+    <div id="users">
+        <input class="search border rounded border-[gray] py-[7px] px-[5px]" placeholder="🔍поиск...">
+        <button class="sort bg-[orange] rounded px-[15px] py-[7px]" data-sort="name">Сортировка по имени</button>
+        <button class="sort bg-[orange] rounded px-[15px] py-[7px]" data-sort="age">Сортировка по возрасту</button>
+        <ul class="list ml-[20px]">
+            <li>
+                <span class="name">Асан</span>,
+                <span class="age">15</span>лет
+            </li>
+            <li>
+                <span class="name">Джек</span>,
+                <span class="age">50</span>лет
+            </li>
+            <li>
+                <span class="name">Иван</span>,
+                <span class="age">5</span>лет
+            </li>
+            <li>
+                <span class="name">Маша</span>,
+                <span class="age">18</span>лет
+            </li>
+            <li>
+                <span class="name">Саша</span>,
+                <span class="age">32</span>года
+            </li>
+        </ul>
+    </div> 
+
+
+
+
+
+
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
