@@ -1,0 +1,19 @@
+h1 {
+  color: red; /*Цвет текста*/
+  font-size: 40px; /*Размер текста*/
+  font-style: italic; /*Курсив(наклон)*/
+  font-weight: 100; /*Начертание текста(жирность)*/
+  font-family: 'Arial'; /*Шрифт*/
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.344); /*Тени для текста*/
+  text-decoration: line-through;/*underline, overline, none*/
+  text-align:center;/*Выравнивание текста*/
+}
+ul{
+    list-style:circle;
+    background: teal;
+    padding: 50px;
+    margin: 50px;
+    width: 200px;
+    height: 100px;
+    border-radius: 20px;
+}
