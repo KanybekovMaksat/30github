@@ -1,19 +1,100 @@
-h1 {
-  color: red; /*Цвет текста*/
-  font-size: 40px; /*Размер текста*/
-  font-style: italic; /*Курсив(наклон)*/
-  font-weight: 100; /*Начертание текста(жирность)*/
-  font-family: 'Arial'; /*Шрифт*/
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.344); /*Тени для текста*/
-  text-decoration: line-through;/*underline, overline, none*/
-  text-align:center;/*Выравнивание текста*/
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
 }
-ul{
-    list-style:circle;
-    background: teal;
-    padding: 50px;
-    margin: 50px;
-    width: 200px;
-    height: 100px;
-    border-radius: 20px;
+.container{
+  width: 1220px;
+  margin: 0 auto;
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 0px;
+}
+.header-nav{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.header-list{
+  display: flex;
+  list-style: none;
+  gap: 22px;
+}
+.header-list li a {
+  text-decoration: none;
+  color: black;
+}
+.header-list li a:hover{
+  color: #0075FF;
+  text-decoration: underline;
+}
+.header-btn{
+  width: 174px;
+  height: 54px;
+  border-radius: 14px;
+  border: none;
+  background: #0075FF;
+  color: white;
+}
+.intro-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h1{
+  font-size: 48px;
+}
+.intro-btn{
+  background: none;
+  border: 1px solid #EFF0F6;
+  border-radius: 14px;
+  width: 214px;
+  height: 73px;
+}
+.intro{
+  padding-top: 54px;
+}
+.intro-box{
+  display: flex;
+  justify-content: space-between;
+}
+.intro-card p{
+  max-width: 312px;
+  text-align: center;
+  font-size: 21px;
+  color: #6E7191;
+}
+.intro-card{
+  width: 388px;
+  height:494px;
+  border: 1px solid #EFF0F6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+}
+.intro-card h3{
+  font-size: 24px;
+  margin-top: 24px;
+  margin-bottom: 13px;
+}
+.intro-box{
+  margin-top: 48px;
+}
+.work-title{
+  font-size: 48px;
+  color: #211F54;
+  text-align: center;
+  margin-top: 97px;
+}
+.work-subtitle{
+  font-size: 21px;
+  width: 648px;
+  text-align: center;
+  margin:auto;
+  margin-top: 21px;
+  color: #6E7191;
 }

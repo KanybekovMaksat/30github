@@ -1,40 +1,85 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Стилизация заголовков</title>
-    <style>
-        body {
-            background-color: #f4f4f4;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            color: blue;
-            font-weight: bold;
-            text-decoration: underline;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-        }
-        h2 {
-            color: green;
-            font-style: italic;
-            text-align: center;
-        }
-        h3 {
-            color: orange;
-            text-decoration: line-through;
-            font-size: 30px;
-        }
-        h1:hover, h2:hover, h3:hover {
-            color: orange;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <h1>Это заголовок H1</h1>
-    <h2>Это заголовок H2</h2>
-    <h3>Это заголовок H3</h3>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>box model - коробочная модель</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="container header">
+      <nav class="header-nav">
+        <img src="./images/logo.png" alt="" />
+        <ul class="header-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Pages</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="header-btn">Get a free quote</button>
+    </header>
+    <section class="container intro">
+      <div class="intro-head">
+        <h1>
+          Take a look at our <br />
+          professional services
+        </h1>
+        <button class="intro-btn">Explore services</button>
+      </div>
+      <div class="intro-box">
+        <div class="intro-card">
+          <img src="./images/house.png" alt="" />
+          <h3>House cleaning</h3>
+          <p>
+            Lorem ipsum dolor sit amet consecte tur adipiscing elit semper
+            dalaracc lacus vel facilisis volutpat est.
+          </p>
+        </div>
+        <div class="intro-card">
+          <img src="./images/office.png" alt="" />
+          <h3>Office cleaning</h3>
+          <p>
+            Lorem ipsum dolor sit amet consecte tur adipiscing elit semper
+            dalaracc lacus vel facilisis volutpat est.
+          </p>
+        </div>
+        <div class="intro-card">
+          <img src="./images/industry.png" alt="" />
+          <h3>Industrial cleaning</h3>
+          <p>
+            Lorem ipsum dolor sit amet consecte tur adipiscing elit semper
+            dalaracc lacus vel facilisis volutpat est.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="container work">
+      <h2 class="work-title">How our service works?</h2>
+      <p class="work-subtitle">
+        Sagittis nibh scelerisque vitae eget vulputate sem elementum sed neque
+        nisi felis non ultrices massa id egestas quam velit pretium nu.
+      </p>
+      <div class="work-card">
+        <img src="" alt="" />
+        <h3>1. Schedule online</h3>
+        <p>
+          Sagittis nibh scelerisque vitae egetolment <br />
+          vulputate sem elementum sed n.
+        </p>
+        <div class="work-card-btns">
+          <button>Get a free quote</button>
+          <button>Explore services</button>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
