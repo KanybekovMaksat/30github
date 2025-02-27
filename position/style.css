@@ -98,3 +98,90 @@ h1{
   margin-top: 21px;
   color: #6E7191;
 }
+.makes{
+  display: flex;
+  align-items: center;
+}
+.makes-info{
+  max-width: 514px;
+}
+.makes-title{
+  font-size: 48px;
+}
+.makes-subtitle{
+  font-size: 18px;
+  color: #6E7191;
+  margin-top: 19px;
+  margin-bottom: 15px;
+  max-width: 496px;
+}
+.makes-text{
+  font-size: 12px;
+  color: #6E7191;
+  max-width: 465px;
+  line-height: 30px;
+}
+.makes-box{
+  display: flex;
+  gap: 85px;
+  margin-top: 25px;
+  margin-bottom: 48px;
+}
+.makes-btn{
+  background: #0075FF;
+  width: 217px;
+  height: 72px;
+  border-radius: 14px;
+  border: none;
+  color: white;
+}
+.home{
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  margin-top: 148px;
+}
+.home-title{
+  font-size: 48px;
+}
+.home-subtitle{
+  font-size: 18px;
+  color: #6E7191;
+  margin-top: 19px;
+  margin-bottom: 26px;
+}
+.home-list{
+  list-style: none;
+  display: flex;
+  gap: 56px;
+  width: 350px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+  margin-bottom: 48px;
+}
+.home-list li{
+  width: 147px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #211F54;
+}
+.home{
+  margin-bottom: 216px;
+}
+footer{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 40px;
+  padding-bottom: 165px;
+  border-top: 1px solid #EFF0F6;
+  margin-top: 216px;
+}
+/*
+1.Intern - Стажер
+2.Junior - 1 год
+3.Junior Strong - 1.5-2 года
+4.Middle - 2-3года
+5.Middle+ - 3-4года 
+6.Senior - Опытный +5лет
+7.CTO, TECHLEAD, TEAMLEAD
+*/
