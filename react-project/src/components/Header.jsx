@@ -3,16 +3,23 @@ import seachImg from '../assets/search.png'
 
 const Header = () => {
   return (
-    <header className='w-[1280px] mx-auto flex items-center 
-    justify-between py-[25px] border-b border-[#E8E8E8]'>
+    <header className='w-[100%] md:w-[1280px] mx-auto  items-center 
+    justify-between py-[25px] border-b border-[#E8E8E8] 
+    flex 
+    bg-[black] text-white  
+    md:bg-[green] md:text-[black]
+    lg:bg-[red]
+    
+    
+    '>
       <img src={LogoImg} alt="" />
-      <nav className='flex gap-[32px]'>
+      <nav className='hidden md:flex gap-[32px]'>
         <a href="">Найти кандидата</a>
         <a href="">Попасть в базу</a>
         <a href="">О сервисе</a>
         <a href="">Портал</a>
       </nav>
-      <div className='flex items-center border border-[gray] 
+      <div className='hidden md:flex items-center border border-[gray] 
       rounded-full py-[10px] px-[14px] gap-[8px]'>
         <img src={seachImg} alt="" className='w-[20px] h-[20px]' />
         <input type="text" placeholder="Поиск" className='outline-none' />

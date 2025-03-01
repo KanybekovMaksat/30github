@@ -1,23 +1,20 @@
-import { ToastContainer, toast } from 'react-toastify';
-import Chart from './components/Chart';
-import Header from './components/Header';
-import Drag from './components/Drag';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Category from './pages/Category';
+import About from './pages/About';
+import NotFound from './pages/NotFound';
 
 function App() {
-  const notify = () =>
-    toast.info('Успешно!', {
-      position: 'bottom-left',
-      theme: 'colored',
-      autoClose: 1000,
-      draggable: true,
-    });
   return (
     <>
-      <Header />
-      <button onClick={notify}>Кликни!</button>
-      <Drag/>
-      {/* <Chart /> */}
-      <ToastContainer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/category" element={<Category />} />
+          <Route path="/us" element={<About />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
