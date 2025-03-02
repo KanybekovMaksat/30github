@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
@@ -13,11 +14,14 @@ const Home = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);СС
+  }, [])
 
   return (
+  
     <div>
+      <Button variant='contained' className='bg-[red]'>Кликни</Button>
       <h1>Список машин</h1>
+      
       {cars.map((item, index) => (
         <div key={index} className='border w-[300px]'>
           <img src={item.photo} className='w-[270px] h-[200px] object-cover' alt="" />

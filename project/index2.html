@@ -5,19 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Домашнее задание</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
 </head>
 <body>
+    <div id="car-container">
+        <input type="text" id="search" class="w-full p-2 mb-4 border rounded search" placeholder="Поиск автомобилей...">
+        <ul id="car-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 list"></ul>
+    </div>
+    <script>
+        async function fetchCars() {
+            try {
+                const response = await fetch("https://90bd69b27d9ba951.mokky.dev/cars");
+                const cars = await response.json();
+                
+                const carList = document.getElementById("car-list");
+                carList.innerHTML = cars.map(car => `
+                    <li class="bg-white shadow-lg rounded-lg p-4">
+                        <img src="${car.photo}" alt="${car.name}" class="w-full h-40 object-cover rounded">
+                        <h2 class="text-xl font-semibold mt-2 title">${car.title}</h2>
+                        <p class="text-gray-600 mt-1 description">${car.description}</p>
+                    </li>
+                `).join("");
 
-    <button class="btn">Нажми меня</button>
-
-    <ul class="list">
-        <li>Элемент 1</li>
-        <li>Элемент 2</li>
-        <li>Элемент 3</li>
-        <li>Элемент 4</li>
-    </ul>
-
-    <p class="text">Это пример абзаца с псевдоэлементами.</p>
-
+                new List('car-container', {
+                    valueNames: ['title', 'description'],
+                    listClass: 'list'
+                });
+                
+            } catch (error) {
+                console.error("Ошибка загрузки данных:", error);
+            }
+        }
+        fetchCars();
+    </script>
 </body>
 </html>
