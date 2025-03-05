@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+  </head>
+  <body>
+    <h1 id="element"></h1>
+
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <script>
+      new TypeIt('#element', {
+        speed: 50,
+        startDelay: 900,
+      })
+        .type('the mot versti', { delay: 100 })
+        .move(-8, { delay: 100 })
+        .type('s', { delay: 400 })
+        .move(null, { to: 'START', instant: true, delay: 300 })
+        .move(1, { delay: 200 })
+        .delete(1)
+        .type('T', { delay: 225 })
+        .pause(200)
+        .move(2, { instant: true })
+        .pause(200)
+        .move(5, { instant: true })
+        .move(5, { delay: 200 })
+        .type('a', { delay: 350 })
+        .move(null, { to: 'END' })
+        .type('le typing utlity')
+        .move(-4, { delay: 150 })
+        .type('i')
+        .move(null, { to: 'END' })
+        .type(' on the <span class="place">internet</span>', { delay: 400 })
+        .delete('.place', { delay: 800, instant: true })
+        .type('<em><strong class="font-semibold">planet.</strong></em>', {
+          speed: 100,
+        })
+        .go();
+    </script>
+  </body>
+</html>

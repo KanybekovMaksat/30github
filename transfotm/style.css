@@ -1,0 +1,56 @@
+.box{
+    width: 200px;
+    height: 200px;
+    background: magenta;
+    transition-duration: 1s;
+    transition-timing-function:ease-in;
+    /* transform-origin: top; */
+    animation-name: toSpin;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+}
+@keyframes toSpin{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg) scaleX(2);
+        background: red;
+        border-radius: 50%;
+    } 
+}
+
+h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    text-shadow: 
+    0 0 10px #0ff, 
+    0 0 20px #0ff, 
+    0 0 40px #0FF;
+    animation: 
+    toGlow 1.5s infinite alternate,
+    toScale 2s infinite alternate;
+}
+@keyframes toGlow {
+    0%{
+        text-shadow: 
+        0 0 10px #0ff, 
+        0 0 20px #0ff, 
+        0 0 40px #0FF;
+    }
+    100%{
+        text-shadow: 
+        0 0 20px #f0f, 
+        0 0 30px #f0f, 
+        0 0 50px #f0f;
+    }
+}
+@keyframes toScale{
+    0%{
+        transform: translateX(135px);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+}

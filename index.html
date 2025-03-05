@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Html Form</title>
+  </head>
+  <body>
+    <form>
+        <input type="text" name="username" placeholder="Введите имя">
+        <input type="password" name="password" placeholder="Введите пароль">
+        <input type="email" name="email" placeholder="Введите email">
+        <input type="tel" name="phone" placeholder="Введите телефон">
+        <input type="date" name="birthdate">
+        <input type="checkbox" name="agree"> Согласен с условиями
+        <input type="radio" name="gender" value="male"> Мужчина
+        <input type="radio" name="gender" value="female"> Женщина
+        <input type="file" name="avatar">
+        <label for="username">Имя:</label>
+        <input type="text" id="username" name="username">
+        <select name="city">
+            <option value="bishkek">Бишкек</option>
+            <option value="osh">Ош</option>
+            <option value="naryn">Нарын</option>
+          </select>
+          <textarea name="message" rows="4" cols="50" placeholder="Введите сообщение"></textarea>
+          <button type="submit">Отправить</button>
+                          
+    </form>
+  </body>
 </html>
